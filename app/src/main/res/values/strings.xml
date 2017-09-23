@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">MapCords</string>
     <string name="title_activity_maps">Map</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="sweref99">SWEREF99</string>
+    <string name="sweref99_short">SR99</string>
+    <string name="wgs84">WGS84</string>
+    <string name="rt90">RT90</string>
 </resources>

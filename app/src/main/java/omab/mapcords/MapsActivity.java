@@ -21,9 +21,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private static final String SET_POSITION_DIALOG_FRAGMENT_KEY = "DialogFragmentKey";
 
-private Button addPin;
+    private Button addPin;
     private GoogleMap mMap;
     private boolean mapReady = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +48,8 @@ private Button addPin;
     }
 
     public void setPin() {
-        if(mapReady) {
-
-
+        if (mapReady) {
+            //Todo: add set pin;
 
         }
 
@@ -66,8 +66,6 @@ private Button addPin;
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
-
-
 
 
 }

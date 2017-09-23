@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9afb81c83f4d4ea9f3881eefb3ea4e07385fc483\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Meandow\.android\build-cache\0d6ba6b00b3041ef195fabaf06340cabbd089cb6\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -30,6 +21,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="414c0d40b3d865bfdb7bddf73c94d488658b6fbe">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_45052a98f432c5df21117c41ef9645b7486a4a39\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Meandow\.android\build-cache\800cd30207260a962af3019b1b1b429167406616\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -39,21 +39,39 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b5f1542dbddd2b1a95e99da0db5714d57c96f39f">
-        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_45052a98f432c5df21117c41ef9645b7486a4a39\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Meandow\.android\build-cache\f2ea5e8592bf0552dca20f20fc4458d26e4f5686\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
         <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5a75f83d267409921f8ff1d5336f78ef2bd54dc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\4d0bf1a8dd9f2e5f936306248b443e3c19b6d685\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_92519ac3f3e77d96bad203210dd5ab7d9137d3bb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9afb81c83f4d4ea9f3881eefb3ea4e07385fc483\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.0\748f0546d5c3c27f1aef07270ffea0c45f0c42a4\rxjava-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="748f0546d5c3c27f1aef07270ffea0c45f0c42a4">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\rxjava-1.1.0_5913c0a4bd285d9899148620c9d2375971a0ee74\classes.dex" />
     </item>
 
 </items>
