@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="android-reactive-location-0.10">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/130cf3c1b356ce25030a517b12196dd959ac6e3b/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/130cf3c1b356ce25030a517b12196dd959ac6e3b/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/pl.charmas.android/android-reactive-location/0.10/aeea65e921fcdab9ea74ba110c1b68699ba11507/android-reactive-location-0.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -10,13 +10,13 @@ public class PrefHelp {
 
     public static final String COORDINATES_NAVIGATION_TYPE_PREF = "CordPrefTypePreference";
 
-    public void setCoordinateSystemPreference(@Constants.NavigationMode int mode) {
+    public static void setCoordinateSystemPreference(int mode) {
         SharedPreferences.Editor editor = ApplicationProvider.getPreferences().edit();
         editor.putInt(COORDINATES_NAVIGATION_TYPE_PREF, mode);
         editor.apply();
     }
 
-    public int getCoordinateSystemPreference() {
+    public static int getCoordinateSystemPreference() {
         SharedPreferences sharedPreferences = ApplicationProvider.getPreferences();
         return sharedPreferences.getInt(COORDINATES_NAVIGATION_TYPE_PREF, 0);
     }

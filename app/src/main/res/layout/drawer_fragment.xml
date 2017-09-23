@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_title"
+        android:text="@string/map_type_title"/>
+
+    <RadioGroup
+        android:id="@+id/coordinates_type_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <RadioButton
+            android:id="@+id/swe_ref_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <RadioButton
+            android:id="@+id/wgs84_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_title"
+        android:text="@string/map_type_title"/>
+    <RadioGroup
+        android:id="@+id/map_type_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <RadioButton
+            android:id="@+id/standard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/standard" />
+        <RadioButton
+            android:id="@+id/satellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/satellite" />
+        <RadioButton
+            android:id="@+id/hybrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hybrid" />
+        <RadioButton
+            android:id="@+id/terrain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/terrain" />
+    </RadioGroup>
+
+</LinearLayout>

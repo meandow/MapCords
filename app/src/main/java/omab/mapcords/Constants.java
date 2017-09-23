@@ -10,9 +10,7 @@ import java.lang.annotation.RetentionPolicy;
  */
 
 public class Constants {
-    @IntDef({NAVIGATION_MODE_WGS84, NAVIGATION_MODE_SWEREF99, NAVIGATION_MODE_RT90})
-    public   @interface NavigationMode {}
-    private static final int NAVIGATION_MODE_WGS84 = 0;
-    private static final int NAVIGATION_MODE_SWEREF99 = 1;
-    private static final int NAVIGATION_MODE_RT90 = 2;
+    public static final int NAVIGATION_MODE_WGS84 = 0;
+    public static final int NAVIGATION_MODE_SWEREF99 = 1;
+    public static final int NAVIGATION_MODE_RT90 = 2;
 }

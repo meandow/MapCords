@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Meandow\.android\build-cache\0d6ba6b00b3041ef195fabaf06340cabbd089cb6\output\jars\classes.jar"
+        jar="C:\Users\Meandow\.android\build-cache\130cf3c1b356ce25030a517b12196dd959ac6e3b\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
-        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7bb790edc6ee1ab6f089ceb2643bf7a10a375ac0\classes.dex" />
+        sha1="473b888e323fd725b5ae1a7e221169d69cf2d158">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_593620293a8504a6b5a6621a8a0e8a576859dbd8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Meandow\.android\build-cache\96abca7f41b8f87e5fec04feccad6fd8fd344509\output\jars\classes.jar"
+        jar="C:\Users\Meandow\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.4\3cc424c6eda381bf4aee40dc3ccdecc27b2106aa\rxjava-1.1.4.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
-        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_35ee2b5801ce53eccef8571315b57ccdd813e847\classes.dex" />
+        sha1="3cc424c6eda381bf4aee40dc3ccdecc27b2106aa">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\rxjava-1.1.4_5a7a018a29e5f8b2380169dc65e377b3c02a415d\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -25,8 +25,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="414c0d40b3d865bfdb7bddf73c94d488658b6fbe">
+        sha1="a1b32ff6add8b0d6272e74d3c7ff33079db9ac15">
         <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_45052a98f432c5df21117c41ef9645b7486a4a39\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\79f9be37e5078710d2cc8294f926a4c61c2aebc5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="927e8ef5711b115b65b2f35495d77352be2b3c09">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f0573a5d008c10fa489d28450da7e87e9f880590\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -39,24 +48,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Meandow\.android\build-cache\f2ea5e8592bf0552dca20f20fc4458d26e4f5686\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
-        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5a75f83d267409921f8ff1d5336f78ef2bd54dc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Meandow\.android\build-cache\4d0bf1a8dd9f2e5f936306248b443e3c19b6d685\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
-        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_92519ac3f3e77d96bad203210dd5ab7d9137d3bb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -66,12 +57,75 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Meandow\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.0\748f0546d5c3c27f1aef07270ffea0c45f0c42a4\rxjava-1.1.0.jar"
+        jar="C:\Users\Meandow\.android\build-cache\0d6ba6b00b3041ef195fabaf06340cabbd089cb6\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="748f0546d5c3c27f1aef07270ffea0c45f0c42a4">
-        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\rxjava-1.1.0_5913c0a4bd285d9899148620c9d2375971a0ee74\classes.dex" />
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7bb790edc6ee1ab6f089ceb2643bf7a10a375ac0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\8c54e76429a674f1a953d48783705c5cb5d3416a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="654b294d429b56fd18392f2b68ad79954f431f8e">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8a85c8981e7a42584ef1d0971bc9dcdaa6963266\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\96abca7f41b8f87e5fec04feccad6fd8fd344509\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_35ee2b5801ce53eccef8571315b57ccdd813e847\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\f2ea5e8592bf0552dca20f20fc4458d26e4f5686\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5a75f83d267409921f8ff1d5336f78ef2bd54dc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\9f047b0ea38bfe71a4770e42632774ab2c74114a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d08bb32b88df3dbcbe1d498c3c57f020b8c521ec">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2c1883f924444fac13ecd8901bb58445ffae4422\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\e69bcb2e636b399ec2e0c0f2dd69c54d5f54d3a3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_52c245bd3974eb7c1e51e28ba11896c59612e3d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\04b4c51c161c28f959603096ec9ea93400e50647\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_731a146cd4423479157b6d9bcc191be1cfd72280\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\ba1fe6c1977134c667abc495f5ae01eea79bf88e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b171b892ed0012821e8f98466a315dfbe8df8b12\classes.dex" />
     </item>
 
 </items>

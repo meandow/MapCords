@@ -1,32 +1,50 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-        <FrameLayout
-            android:id="@+id/main_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    <fragment xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="omab.mapcords.MapsActivity" />
 
-                <fragment xmlns:tools="http://schemas.android.com/tools"
-                    android:id="@+id/map"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:context="omab.mapcords.MapsActivity" />
 
-                <Button
-                    android:id="@+id/add"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+        <include layout="@layout/layout_coordinates"/>
+    </LinearLayout>
 
-            </RelativeLayout>
 
-        </FrameLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_black_24dp"
+        app:elevation="4dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/fab_margins"/>
 
 </RelativeLayout>
+<FrameLayout
+    android:id="@+id/drawer_container"
+    android:layout_width="250dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:background="@android:color/white">
+</FrameLayout>
+</android.support.v4.widget.DrawerLayout>
