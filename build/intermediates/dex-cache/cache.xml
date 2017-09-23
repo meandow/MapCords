@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9afb81c83f4d4ea9f3881eefb3ea4e07385fc483\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\0d6ba6b00b3041ef195fabaf06340cabbd089cb6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7bb790edc6ee1ab6f089ceb2643bf7a10a375ac0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\96abca7f41b8f87e5fec04feccad6fd8fd344509\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_35ee2b5801ce53eccef8571315b57ccdd813e847\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\800cd30207260a962af3019b1b1b429167406616\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b4fff04767bf18e7f235fefd8e0a1e430d4f4298\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b5f1542dbddd2b1a95e99da0db5714d57c96f39f">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_45052a98f432c5df21117c41ef9645b7486a4a39\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Meandow\.android\build-cache\f2ea5e8592bf0552dca20f20fc4458d26e4f5686\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
+        <dex dex="C:\Users\Meandow\Documents\GitHub\MapCords\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5a75f83d267409921f8ff1d5336f78ef2bd54dc\classes.dex" />
+    </item>
+
+</items>
