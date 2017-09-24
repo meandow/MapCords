@@ -1,28 +1,37 @@
 package omab.mapcords.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.BundleCompat;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import omab.mapcords.ApplicationProvider;
 import omab.mapcords.R;
 import rx.Subscription;
+import rx.Observable;
+import rx.functions.Func1;
 
 
 public class PositionDialog extends DialogFragment {
 
-    protected String mTitle;
-    protected String mHint;
-    protected String mSecondTitle;
-    protected String mSecondHint;
+    protected TextView mTitle;
+    protected TextView mHint;
+    protected TextView mSecondTitle;
+    protected TextView mSecondHint;
 
+    protected EditText firstValueEdit;
+    protected EditText secondValueEdit;
     protected double firstValue;
     protected double secondValue;
 
+    protected Button save, cancel;
     private Subscription subscribe;
     private PositionValueSaveListener mPositionValueSaveListener;
 
@@ -38,8 +47,14 @@ public class PositionDialog extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+        firstValueEdit = (EditText) view.findViewById(R.id.firstValue);
+        secondValueEdit = (EditText) view.findViewById(R.id.secondValue);
+        save = (Button) view.findViewById(R.id.save);
+        cancel = (Button) view.findViewById(R.id.cancel);
 
-
+        firstValueEdit.requestFocus();
+        InputMethodManager imm = (InputMethodManager) ApplicationProvider.getInstance().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
     public interface PositionValueSaveListener{
