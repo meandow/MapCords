@@ -12,11 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.reactivestreams.Subscription;
+
 import omab.mapcords.ApplicationProvider;
 import omab.mapcords.R;
-import rx.Subscription;
-import rx.Observable;
-import rx.functions.Func1;
+
 
 
 public class PositionDialog extends DialogFragment {

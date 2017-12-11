@@ -1,23 +1,24 @@
 package omab.mapcords;
 
 import android.Manifest;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.location.LocationRequest;
@@ -28,20 +29,23 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import omab.mapcords.fragments.DrawerFragment;
 import omab.mapcords.fragments.PositionDialog;
 import omab.mapcords.positions.PositionHelper;
 import omab.mapcords.positions.SWEREF99Position;
 import omab.mapcords.positions.WGS84Position;
 import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+
+import static android.R.attr.permission;
+
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private static final String SET_POSITION_DIALOG_FRAGMENT_KEY = "DialogFragmentKey";
     private static final int MY_PERMISSIONS_REQUEST_FINE_LOCATION = 111;
+    public final static int REQUEST_CODE = 7686;
     private FloatingActionButton addPin;
     private GoogleMap mMap;
     private boolean mapReady = false;
@@ -62,9 +66,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         wgs84_long = (TextView) findViewById(R.id.wgs84_cords_long);
         addPin = (FloatingActionButton) findViewById(R.id.add_pin);
         addPin.setOnClickListener((View v) -> {
-            openDialog();
+//            openDialog();
+            initiateService();
         });
-        initializeLocationManager();
+        //initializeLocationManager();
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -115,29 +120,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(new Intent(this, GpsCoordinatesOverlay.class));
+    }
+
     public void subscribeForLocations() {
         LocationRequest request = LocationRequest.create() //standard GMS LocationRequest
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setNumUpdates(5)
                 .setInterval(100);
         ReactiveLocationProvider locationProvider = new ReactiveLocationProvider(getApplicationContext());
-        if (locationPermission) {
-
-            try {
-                locationProvider.getUpdatedLocation(request)
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeOn(Schedulers.io())
-                        .subscribe(new Action1<Location>() {
-                            @Override
-                            public void call(Location location) {
-                                updateLocationText(location);
-                            }
-                        });
-            } catch (SecurityException e) {
-                showAlert();
-            }
-
-        }
     }
 
     @Override
@@ -206,6 +200,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     locationPermission = false;
                 }
                 return;
+            }
+        }
+    }
+
+    public void initiateService() {
+        if (!Settings.canDrawOverlays(this)) {
+            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    Uri.parse("package:" + getPackageName()));
+            startActivityForResult(intent, REQUEST_CODE);
+        } else {
+            Intent serviceIntent = new Intent();
+            serviceIntent.setComponent(new ComponentName("omab.mapcords", "omab.mapcords.GpsCoordinatesOverlay"));
+            startService(serviceIntent);
+        }
+        Log.i("hesv", "initiateService");
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
+        Log.i("hesv", "activityResult w: " + requestCode);
+        if (requestCode == REQUEST_CODE) {
+            if (Settings.canDrawOverlays(this)) {
+                Intent serviceIntent = new Intent();
+                serviceIntent.setComponent(new ComponentName("omab.mapcords", "omab.mapcords.GpsCoordinatesOverlay"));
+                startService(serviceIntent);
             }
         }
     }
