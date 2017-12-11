@@ -20,6 +20,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 
 public class GpsCoordinatesOverlay extends Service {
     private LinearLayout linearLayout;
@@ -36,7 +38,7 @@ public class GpsCoordinatesOverlay extends Service {
     private LocationManager mLocationManager = null;
     private static final int LOCATION_INTERVAL = 1000;
     private static final float LOCATION_DISTANCE = 10f;
-    private Location mLastLocation;
+    private Location lastLocation;
 
     private TextView northText;
     private TextView eastText;
@@ -45,14 +47,14 @@ public class GpsCoordinatesOverlay extends Service {
 
         public LocationListener(String provider) {
             Log.e(TAG, "LocationListener " + provider);
-            mLastLocation = new Location(provider);
-            updateTexts();
+            lastLocation = new Location(provider);
         }
 
         @Override
         public void onLocationChanged(Location location) {
             Log.e(TAG, "onLocationChanged: " + location);
-            mLastLocation.set(location);
+            lastLocation.set(location);
+            updateTexts();
         }
 
         @Override
@@ -103,8 +105,8 @@ public class GpsCoordinatesOverlay extends Service {
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         LayoutInflater li = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         linearLayout = (LinearLayout) li.inflate(R.layout.gps_overlay_layout, null);
-        northText = (TextView) linearLayout.findViewById(R.id.north_value);
-        eastValue = (TextView) linearLayout.findViewById(R.id.east_value);
+        // northText = (TextView) linearLayout.findViewById(R.id.north_value);
+        //eastValue = (TextView) linearLayout.findViewById(R.id.east_value);
 
         try {
             mLocationManager.requestLocationUpdates(
@@ -119,20 +121,6 @@ public class GpsCoordinatesOverlay extends Service {
             Log.d(TAG, "network provider does not exist, " + ex.getMessage());
         }
 
-        /*try {
-            mLocationManager.requestLocationUpdates(
-                    LocationManager.GPS_PROVIDER,
-                    LOCATION_INTERVAL,
-                    LOCATION_DISTANCE,
-                    mLocationListeners[1]
-            );
-        } catch (java.lang.SecurityException ex) {
-            Log.i(TAG, "fail to request location update, ignore", ex);a
-        } catch (IllegalArgumentException ex) {
-            Log.d(TAG, "gps provider does not exist " + ex.getMessage());
-        }*/
-
-
         final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
@@ -142,7 +130,7 @@ public class GpsCoordinatesOverlay extends Service {
                         | WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
                         | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
-        params.gravity = Gravity.TOP | Gravity.LEFT;
+        params.gravity = Gravity.TOP | Gravity.START;
         windowManager.addView(linearLayout, params);
     }
 
@@ -162,6 +150,9 @@ public class GpsCoordinatesOverlay extends Service {
                 }
             }
         }
+        if (linearLayout != null) {
+            windowManager.removeView(linearLayout);
+        }
     }
 
     private void initializeLocationManager() {
@@ -173,10 +164,10 @@ public class GpsCoordinatesOverlay extends Service {
 
     private void updateTexts() {
         if (northValue != null) {
-            // northValue.setText();
+             northValue.setText(String.format(Locale.getDefault(), "%f", lastLocation.getLongitude()));
         }
         if (eastValue != null) {
-            //eastValue.setText(mLastLocation.getLongitude());
+            eastValue.setText(String.format(Locale.getDefault(), "%f", lastLocation.getLongitude()));
         }
     }
 }

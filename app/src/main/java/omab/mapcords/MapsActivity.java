@@ -1,6 +1,9 @@
 package omab.mapcords;
 
 import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -138,7 +141,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mapReady = true;
         mMap = googleMap;
-        if(locationPermission) {
+        if (locationPermission) {
             try {
                 mMap.setMyLocationEnabled(true);
             } catch (SecurityException e) {
@@ -195,7 +198,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             case MY_PERMISSIONS_REQUEST_FINE_LOCATION: {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                        locationPermission = true;
+                    locationPermission = true;
                 } else {
                     locationPermission = false;
                 }
@@ -210,22 +213,36 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Uri.parse("package:" + getPackageName()));
             startActivityForResult(intent, REQUEST_CODE);
         } else {
-            Intent serviceIntent = new Intent();
-            serviceIntent.setComponent(new ComponentName("omab.mapcords", "omab.mapcords.GpsCoordinatesOverlay"));
-            startService(serviceIntent);
+            startService();
         }
         Log.i("hesv", "initiateService");
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.i("hesv", "activityResult w: " + requestCode);
         if (requestCode == REQUEST_CODE) {
             if (Settings.canDrawOverlays(this)) {
-                Intent serviceIntent = new Intent();
-                serviceIntent.setComponent(new ComponentName("omab.mapcords", "omab.mapcords.GpsCoordinatesOverlay"));
-                startService(serviceIntent);
+                startService();
             }
         }
+    }
+
+    private void startService() {
+        Intent intent = new Intent(this, HideServiceActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Notification noti = new Notification.Builder(this)
+                .setTicker("Koordinater")
+                .setContentTitle(getString(R.string.shut_off_coordinate_overlay))
+                .setSmallIcon(R.drawable.close)
+                .setContentIntent(pIntent).getNotification();
+        noti.flags= Notification.FLAG_AUTO_CANCEL;
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(0, noti);
+
+        Intent serviceIntent = new Intent();
+        serviceIntent.setComponent(new ComponentName("omab.mapcords", "omab.mapcords.GpsCoordinatesOverlay"));
+        startService(serviceIntent);
+
     }
 }
