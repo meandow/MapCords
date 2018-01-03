@@ -12,6 +12,20 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textSize="@dimen/text_size_title" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:background="@color/gray_transparent"
+            android:focusable="true"
+            android:textSize="@dimen/text_size" />
+
+        <TextView
             android:id="@+id/firstTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
