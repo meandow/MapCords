@@ -28,20 +28,16 @@ public class GpsCoordinatesOverlay extends Service {
     private WindowManager windowManager;
     private TextView northValue;
     private TextView eastValue;
-
-    @Override
-    public boolean onUnbind(Intent intent) {
-        return super.onUnbind(intent);
-    }
-
     private static final String TAG = "MyLocationService";
     private LocationManager mLocationManager = null;
     private static final int LOCATION_INTERVAL = 1000;
     private static final float LOCATION_DISTANCE = 10f;
     private Location lastLocation;
 
-    private TextView northText;
-    private TextView eastText;
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return super.onUnbind(intent);
+    }
 
     private class LocationListener implements android.location.LocationListener {
 
@@ -81,7 +77,7 @@ public class GpsCoordinatesOverlay extends Service {
     */
 
     LocationListener[] mLocationListeners = new LocationListener[]{
-            new LocationListener(LocationManager.PASSIVE_PROVIDER)
+            new LocationListener(LocationManager.GPS_PROVIDER)
     };
 
     @Override
@@ -105,8 +101,8 @@ public class GpsCoordinatesOverlay extends Service {
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         LayoutInflater li = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         linearLayout = (LinearLayout) li.inflate(R.layout.gps_overlay_layout, null);
-        // northText = (TextView) linearLayout.findViewById(R.id.north_value);
-        //eastValue = (TextView) linearLayout.findViewById(R.id.east_value);
+        northValue = (TextView) linearLayout.findViewById(R.id.north_value);
+        eastValue = (TextView) linearLayout.findViewById(R.id.east_value);
 
         try {
             mLocationManager.requestLocationUpdates(
@@ -164,7 +160,7 @@ public class GpsCoordinatesOverlay extends Service {
 
     private void updateTexts() {
         if (northValue != null) {
-             northValue.setText(String.format(Locale.getDefault(), "%f", lastLocation.getLongitude()));
+            northValue.setText(String.format(Locale.getDefault(), "%f", lastLocation.getLatitude()));
         }
         if (eastValue != null) {
             eastValue.setText(String.format(Locale.getDefault(), "%f", lastLocation.getLongitude()));
