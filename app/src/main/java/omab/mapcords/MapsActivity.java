@@ -2,7 +2,6 @@ package omab.mapcords;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -14,13 +13,10 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.location.LocationRequest;
@@ -38,7 +34,6 @@ import omab.mapcords.positions.SWEREF99Position;
 import omab.mapcords.positions.WGS84Position;
 import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, SharedPreferences.OnSharedPreferenceChangeListener {
@@ -97,7 +92,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        Log.i("hesv", "discalled??");
         if (key.equals(PrefHelp.COORDINATES_NAVIGATION_TYPE_PREF)) {
             updateMapType();
         }
@@ -142,12 +136,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 locationProvider.getUpdatedLocation(request)
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeOn(Schedulers.io())
-                        .subscribe(new Action1<Location>() {
-                            @Override
-                            public void call(Location location) {
-                                updateLocationText(location);
-                            }
-                        });
+                        .subscribe(location -> updateLocationText(location));
             } catch (SecurityException e) {
                 showAlert();
             }
@@ -189,17 +178,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         dialog.setTitle("Enable Location")
                 .setMessage("Your Locations Settings is set to 'Off'.\nPlease Enable Location to " +
                         "use this app")
-                .setPositiveButton("Location Settings", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-                        Intent myIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                        startActivity(myIntent);
-                    }
+                .setPositiveButton("Location Settings", (paramDialogInterface, paramInt) -> {
+                    Intent myIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(myIntent);
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-                    }
+                .setNegativeButton("Cancel", (paramDialogInterface, paramInt) -> {
                 });
         dialog.show();
     }

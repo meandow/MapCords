@@ -54,40 +54,33 @@ public class DrawerFragment extends Fragment {
         hybrid = (RadioButton) view.findViewById(R.id.hybrid);
         satellite = (RadioButton) view.findViewById(R.id.satellite);
         updateSelections();
-        coordGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                switch (checkedId) {
-                    case R.id.swe_ref_type:
-                        PrefHelp.setCoordinateSystemPreference(editor, Constants.NavigationMode.NAVIGATION_MODE_SWEREF99);
-                        break;
-                    case R.id.wgs84_type:
-                        PrefHelp.setCoordinateSystemPreference(editor, Constants.NavigationMode.NAVIGATION_MODE_WGS84);
-                        break;
-                }
+        coordGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.swe_ref_type:
+                    PrefHelp.setCoordinateSystemPreference(editor, Constants.NavigationMode.NAVIGATION_MODE_SWEREF99);
+                    break;
+                case R.id.wgs84_type:
+                    PrefHelp.setCoordinateSystemPreference(editor, Constants.NavigationMode.NAVIGATION_MODE_WGS84);
+                    break;
             }
         });
 
-        mapGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // find which radio button is selected
-                switch (checkedId) {
-                    case R.id.standard:
-                        PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_NORMAL);
-                        break;
-                    case R.id.terrain:
-                        PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_TERRAIN);
-                        break;
-                    case R.id.hybrid:
-                        PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_HYBRID);
-                        break;
-                    case R.id.satellite:
-                        PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_SATELLITE);
-                        break;
-                    default:
-                        break;
-                }
+        mapGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.standard:
+                    PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_NORMAL);
+                    break;
+                case R.id.terrain:
+                    PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_TERRAIN);
+                    break;
+                case R.id.hybrid:
+                    PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_HYBRID);
+                    break;
+                case R.id.satellite:
+                    PrefHelp.setMapSystemPreference(editor, GoogleMap.MAP_TYPE_SATELLITE);
+                    break;
+                default:
+                    break;
             }
         });
     }

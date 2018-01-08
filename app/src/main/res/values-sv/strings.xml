@@ -1,0 +1,20 @@
+<resources>
+    <string name="coordinate_type">Koordinater</string>
+    <string name="map_type_title">Karttyp</string>
+    <string name="standard">Standard</string>
+    <string name="satellite">Satellit</string>
+    <string name="hybrid">Hybrid</string>
+    <string name="terrain">Terräng</string>
+    <string name="name">Namn</string>
+    <string name="north">N</string>
+    <string name="east">E</string>
+    <string name="empty_value">-//-</string>
+    <string name="app_name">Koordinater</string>
+    <string name="title_activity_maps">Koordinater</string>
+    <string name="save">Spara</string>
+    <string name="cancel">Avbryt</string>
+    <string name="sweref99">SWEREF99</string>
+    <string name="sweref99_short">SR99:</string>
+    <string name="wgs84">WGS84:</string>
+    <string name="rt90">RT90:</string>
+</resources>

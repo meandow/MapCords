@@ -36,7 +36,7 @@
 
         <activity
             android:name=".HideServiceActivity"
-            android:theme="@android:style/Theme.Dialog"></activity>
+            android:theme="@android:style/Theme.Dialog" />
     </application>
 
 </manifest>

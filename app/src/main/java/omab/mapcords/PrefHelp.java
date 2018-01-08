@@ -4,10 +4,6 @@ import android.content.SharedPreferences;
 
 import com.google.android.gms.maps.GoogleMap;
 
-/**
- * Created by Meandow on 9/23/2017.
- */
-
 public class PrefHelp {
 
     public static final String COORDINATES_NAVIGATION_TYPE_PREF = "CordPrefTypePreference";

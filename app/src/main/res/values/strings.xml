@@ -9,8 +9,8 @@
     <string name="north">N</string>
     <string name="east">E</string>
     <string name="empty_value">-//-</string>
-    <string name="app_name">MapCoords</string>
-    <string name="title_activity_maps">MapCords</string>
+    <string name="app_name">Coordinates</string>
+    <string name="title_activity_maps">Coordinates</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="sweref99">SWEREF99</string>
