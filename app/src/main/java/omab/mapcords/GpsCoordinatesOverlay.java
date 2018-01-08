@@ -22,6 +22,9 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import omab.mapcords.positions.SWEREF99Position;
+import omab.mapcords.positions.WGS84Position;
+
 
 public class GpsCoordinatesOverlay extends Service {
     private LinearLayout linearLayout;
@@ -100,9 +103,12 @@ public class GpsCoordinatesOverlay extends Service {
         initializeLocationManager();
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         LayoutInflater li = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        linearLayout = (LinearLayout) li.inflate(R.layout.gps_overlay_layout, null);
-        northValue = (TextView) linearLayout.findViewById(R.id.north_value);
-        eastValue = (TextView) linearLayout.findViewById(R.id.east_value);
+
+        if (li != null) {
+            linearLayout = (LinearLayout) li.inflate(R.layout.gps_overlay_layout, null);
+            northValue = (TextView) linearLayout.findViewById(R.id.north_value);
+            eastValue = (TextView) linearLayout.findViewById(R.id.east_value);
+        }
 
         try {
             mLocationManager.requestLocationUpdates(
@@ -159,11 +165,14 @@ public class GpsCoordinatesOverlay extends Service {
     }
 
     private void updateTexts() {
+        Log.i("hesv", "updatingTexts");
+        WGS84Position wgs84Position  =new WGS84Position(lastLocation.getLatitude(), lastLocation.getLongitude());
+        SWEREF99Position sweref99Position = new SWEREF99Position(wgs84Position, SWEREF99Position.SWEREFProjection.sweref_99_12_00);
         if (northValue != null) {
-            northValue.setText(String.format(Locale.getDefault(), "%f", lastLocation.getLatitude()));
+            northValue.setText(String.format(Locale.getDefault(), "%.3f", sweref99Position.getLatitude()));
         }
         if (eastValue != null) {
-            eastValue.setText(String.format(Locale.getDefault(), "%f", lastLocation.getLongitude()));
+            eastValue.setText(String.format(Locale.getDefault(), "%.3f", sweref99Position.getLongitude()));
         }
     }
 }
