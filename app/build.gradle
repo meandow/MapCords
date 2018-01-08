@@ -1,10 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
-apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "omab.mapcords"
         minSdkVersion 23
@@ -33,7 +30,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'pl.charmas.android:android-reactive-location:0.10@aar'
-    compile 'com.google.android.gms:play-services-location:10.2.0' //you can use newer GMS version if you need
+    compile 'com.google.android.gms:play-services-location:10.2.0'
+    //you can use newer GMS version if you need
     compile 'com.google.android.gms:play-services-places:10.2.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.2.3'
