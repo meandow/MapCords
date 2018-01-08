@@ -42,6 +42,7 @@ public class GaussKreuger {
      * differences between Bessel and GRS80-ellipsoides.
      * Bessel-variants should only be used if lat/long are given as
      * RT90-lat/long based on the Bessel ellipsoide (from old maps).
+     *
      * @param projection
      */
     public void swedish_params(String projection) {

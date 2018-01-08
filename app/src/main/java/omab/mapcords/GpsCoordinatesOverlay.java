@@ -166,7 +166,7 @@ public class GpsCoordinatesOverlay extends Service {
 
     private void updateTexts() {
         Log.i("hesv", "updatingTexts");
-        WGS84Position wgs84Position  =new WGS84Position(lastLocation.getLatitude(), lastLocation.getLongitude());
+        WGS84Position wgs84Position = new WGS84Position(lastLocation.getLatitude(), lastLocation.getLongitude());
         SWEREF99Position sweref99Position = new SWEREF99Position(wgs84Position, SWEREF99Position.SWEREFProjection.sweref_99_12_00);
         if (northValue != null) {
             northValue.setText(String.format(Locale.getDefault(), "%.3f", sweref99Position.getLatitude()));

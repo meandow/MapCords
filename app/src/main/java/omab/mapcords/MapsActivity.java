@@ -97,7 +97,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        Log.i("hesv","discalled??");
+        Log.i("hesv", "discalled??");
         if (key.equals(PrefHelp.COORDINATES_NAVIGATION_TYPE_PREF)) {
             updateMapType();
         }
@@ -160,7 +160,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapReady = true;
         mMap = googleMap;
         updateMapType();
-        if(locationPermission) {
+        if (locationPermission) {
             try {
                 mMap.setMyLocationEnabled(true);
             } catch (SecurityException e) {
@@ -221,7 +221,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             case MY_PERMISSIONS_REQUEST_FINE_LOCATION: {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                        locationPermission = true;
+                    locationPermission = true;
                 } else {
                     locationPermission = false;
                 }

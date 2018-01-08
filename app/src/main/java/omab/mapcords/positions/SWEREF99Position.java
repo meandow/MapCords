@@ -29,6 +29,7 @@ public class SWEREF99Position extends Position {
 
     /**
      * Create a SWEREF99 position from double values with SWEEREF 99 TM as default projection
+     *
      * @param n North value
      * @param e East value
      */
@@ -41,8 +42,9 @@ public class SWEREF99Position extends Position {
     /**
      * Create a SWEREF99 position from double values. Suplly the projection for values
      * other than SWEREF 99 TM
-     * @param n North value
-     * @param e East value
+     *
+     * @param n          North value
+     * @param e          East value
      * @param projection Projection type
      */
     public SWEREF99Position(double n, double e, SWEREFProjection projection) {
@@ -52,7 +54,8 @@ public class SWEREF99Position extends Position {
 
     /**
      * Create a SWEREF99 position by converting a WGS84 position
-     * @param position WGS84 position to convert
+     *
+     * @param position   WGS84 position to convert
      * @param projection Projection to convert to
      */
     public SWEREF99Position(WGS84Position position, SWEREFProjection projection) {
@@ -69,6 +72,7 @@ public class SWEREF99Position extends Position {
 
     /**
      * Convert the position to WGS84 format
+     *
      * @return
      */
     public WGS84Position toWGS84() {
@@ -83,6 +87,7 @@ public class SWEREF99Position extends Position {
 
     /**
      * Get projection type as String
+     *
      * @return
      */
     public String getProjectionString() {
@@ -139,8 +144,9 @@ public class SWEREF99Position extends Position {
         }
         return retVal;
     }
+
     @Override
     public String toString() {
-        return String.format(Locale.US, "N: %f E: %f Projection: %s", this.latitude, this.longitude,getProjectionString());
+        return String.format(Locale.US, "N: %f E: %f Projection: %s", this.latitude, this.longitude, getProjectionString());
     }
 }

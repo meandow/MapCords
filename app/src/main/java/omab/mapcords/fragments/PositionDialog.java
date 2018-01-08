@@ -34,6 +34,7 @@ public class PositionDialog extends DialogFragment {
     private PositionValueSaveListener mPositionValueSaveListener;
 
     private Button saveButton, cancelButton;
+
     public PositionDialog() {
     }
 
@@ -55,21 +56,24 @@ public class PositionDialog extends DialogFragment {
 
         firstValueEdit.requestFocus();
         InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        if (imm != null) {
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        }
     }
 
-    private void getValues(){
+    private void getValues() {
         String first = firstValueEdit.getText().toString();
         String second = secondValueEdit.getText().toString();
         String name = nameEdit.getText().toString();
         mPositionValueSaveListener.onPositionSave(name, Double.parseDouble(first), Double.parseDouble(second));
         this.dismiss();
     }
-    public interface PositionValueSaveListener{
+
+    public interface PositionValueSaveListener {
         void onPositionSave(String name, double firstValue, double secondValue);
     }
 
-    public void setPositionValueSaveListener(PositionValueSaveListener onPositionValueSave){
+    public void setPositionValueSaveListener(PositionValueSaveListener onPositionValueSave) {
         mPositionValueSaveListener = onPositionValueSave;
     }
 }

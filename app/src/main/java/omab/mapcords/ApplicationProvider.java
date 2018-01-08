@@ -11,7 +11,8 @@ import android.content.SharedPreferences;
 public class ApplicationProvider extends Application {
 
     private static ApplicationProvider instance;
-    public ApplicationProvider(){
+
+    public ApplicationProvider() {
         super();
     }
 

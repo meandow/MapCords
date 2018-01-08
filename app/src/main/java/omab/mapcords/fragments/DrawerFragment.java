@@ -24,22 +24,23 @@ import omab.mapcords.R;
  * Created by Meandow on 9/23/2017.
  */
 
-public class DrawerFragment extends Fragment{
+public class DrawerFragment extends Fragment {
 
     private RadioButton sweRef, wgs84;
     private RadioButton standard, terrain, hybrid, satellite;
 
     private SharedPreferences sharedPreferences;
-    public DrawerFragment(){
+
+    public DrawerFragment() {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.drawer_fragment, container, false);
     }
 
     @Override
-    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState){
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         sharedPreferences = getActivity().getSharedPreferences(getActivity().getPackageName(), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
